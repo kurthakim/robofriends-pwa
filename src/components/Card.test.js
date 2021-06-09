@@ -1,7 +1,8 @@
 import React from 'react'
-import { shallow, mount, render } from 'enzyme';
-import Card from './Card'
+import { shallow } from 'enzyme';
+import Card from './Card';
+import toJson from 'enzyme-to-json';
 
 it('expect to render Card component', () => {
-    expect(shallow(<Card />).length).toEqual(1);
+    expect(toJson(shallow(<Card />))).toMatchSnapshot();
 });
